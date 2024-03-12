@@ -8,16 +8,18 @@ import zin.springboot.springbootwaiter.transferClass.ResponseWaiter;
 @Data
 public class BasicUserResponse extends ResponseWaiter<BasicUser> {
 
-    private String nome;
+    private Long id;
+
+    private String name;
 
     private String email;
 
     public BasicUserResponse() {
     }
 
-    public BasicUserResponse(Long id, String nome, String email) {
+    public BasicUserResponse(Long id, String name, String email) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
         this.email = email;
     }
 

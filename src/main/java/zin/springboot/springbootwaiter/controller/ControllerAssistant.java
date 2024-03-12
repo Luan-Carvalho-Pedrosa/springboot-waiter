@@ -3,6 +3,7 @@ package zin.springboot.springbootwaiter.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
 import zin.springboot.springbootwaiter.model.AbstractModel;

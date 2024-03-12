@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,13 +27,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/basicUser")
 public class BasicUserControllerImpl {
 
-    @Autowired
-    private BasicUserRepository repository;
+   // @Autowired
+    //private BasicUserRepository repository;
 
-    @Autowired
-    private BasicUserService service =  new BasicUserService(repository);
+   // @Autowired
+   // private BasicUserService service;
 
-    private BasicUserController controllerAssistant = new BasicUserController(service);
+	@Autowired
+    private BasicUserController controllerAssistant;
 
    
     
@@ -68,7 +70,7 @@ public class BasicUserControllerImpl {
         }
     }
 
-    @PutMapping("/id")
+    @PutMapping("/{id}")
     public ResponseEntity<?> put(@RequestBody BasicUserRequest request, @PathVariable Long id){
         try {
             return this.controllerAssistant.put(request, id);
@@ -78,7 +80,7 @@ public class BasicUserControllerImpl {
         }
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable long id){
         try {
             return this.controllerAssistant.delete(id);

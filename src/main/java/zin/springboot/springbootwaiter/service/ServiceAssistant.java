@@ -16,7 +16,6 @@ public abstract class ServiceAssistant<T extends AbstractModel, K extends DtoWai
       protected JpaRepository<T, Long> repository;
 
       public ServiceAssistant(JpaRepository<T, Long> repository) {
-
         this.repository = repository;
       }
 

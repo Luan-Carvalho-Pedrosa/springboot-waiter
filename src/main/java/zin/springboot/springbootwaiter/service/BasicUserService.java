@@ -1,5 +1,6 @@
 package zin.springboot.springbootwaiter.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import zin.springboot.springbootwaiter.transferClass.BasicUser.BasicUserDto;
 @Service
 public class BasicUserService extends ServiceAssistant<BasicUser, BasicUserDto> {
 
+	@Autowired
     public BasicUserService(BasicUserRepository repository) {
         super(repository);
         //TODO Auto-generated constructor stub
@@ -22,8 +24,8 @@ public class BasicUserService extends ServiceAssistant<BasicUser, BasicUserDto> 
 
         dto.setId(model.getId());
         dto.setEmail(model.getEmail());
-        dto.setEmail(model.getNome());
-        dto.setSenha(model.getSenha());
+        dto.setName(model.getName());
+        dto.setPassworld(model.getPassworld());
 
         return dto;
     }

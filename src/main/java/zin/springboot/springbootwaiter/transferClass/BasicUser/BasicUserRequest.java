@@ -6,15 +6,15 @@ import zin.springboot.springbootwaiter.transferClass.RequestWaiter;
 @Data
 public class BasicUserRequest extends RequestWaiter<BasicUserDto> {
 
-    private String nome;
+    private String name;
 
     private String email;
 
-    private String senha;
+    private String passworld;
 
     @Override
     public BasicUserDto convertToDTO() {
-        return new BasicUserDto(this.nome, this.email, this.senha);
+        return new BasicUserDto(this.name, this.email, this.passworld);
     }
 
   

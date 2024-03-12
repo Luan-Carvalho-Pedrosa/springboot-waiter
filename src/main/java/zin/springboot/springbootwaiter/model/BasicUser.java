@@ -13,22 +13,22 @@ public class BasicUser extends AbstractModel {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    
-    private String nome;
+    protected Long id;
+	
+    private String name;
 
     private String email;
 
-    private String senha;
+    private String passworld;
 
     public BasicUser() {
         //TODO Auto-generated constructor stub
     }
 
-    public BasicUser(String nome, String email, String senha) {
-        this.nome = nome;
+    public BasicUser(String name, String email, String passworld) {
+        this.name = name;
         this.email = email;
-        this.senha = senha;
+        this.passworld = passworld;
     }
 
     

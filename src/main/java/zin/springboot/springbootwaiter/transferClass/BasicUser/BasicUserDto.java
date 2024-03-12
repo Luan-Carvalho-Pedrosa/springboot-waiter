@@ -8,28 +8,28 @@ import zin.springboot.springbootwaiter.transferClass.DtoWaiter;
 @Data
 public class BasicUserDto extends DtoWaiter<BasicUser> {
 
-    private String nome;
+    private String name;
 
     private String email;
 
-    private String senha;
+    private String passworld;
 
     public BasicUserDto() {
     }
 
-    public BasicUserDto(String nome, String email, String senha) {
-        this.nome = nome;
+    public BasicUserDto(String name, String email, String passworld) {
+        this.name = name;
         this.email = email;
-        this.senha = senha;
+        this.passworld = passworld;
     }
 
     @Override
     public BasicUser convertToModel() {
         BasicUser user = new BasicUser();
         user.setId(this.id);
-        user.setNome(this.nome);
+        user.setName(this.name);
         user.setEmail(this.email);
-        user.setSenha(this.senha);
+        user.setPassworld(this.passworld);
 
         return user;
     }
